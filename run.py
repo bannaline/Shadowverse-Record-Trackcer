@@ -1133,6 +1133,7 @@ class MyWindow(QMainWindow, form_class):
             plt.pie(ratio, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
             self.canvas11.draw()
             df = myWindow.df2
+            df = df[df['MyArche'].isin([name])]
             first = df[df['FirstSecond'].isin(['선공'])]
             firstwin = first[first['WinLose'].isin(['승'])]
             second = df[df['FirstSecond'].isin(['후공'])]
@@ -1170,6 +1171,7 @@ class MyWindow(QMainWindow, form_class):
             plt.pie(ratio, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
             self.canvas12.draw()
             df = myWindow.df2
+            df = df[df['MyArche'].isin([name])]
             first = df[df['FirstSecond'].isin(['선공'])]
             firstwin = first[first['WinLose'].isin(['승'])]
             second = df[df['FirstSecond'].isin(['후공'])]
@@ -1207,6 +1209,7 @@ class MyWindow(QMainWindow, form_class):
             plt.pie(ratio, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
             self.canvas13.draw()
             df = myWindow.df2
+            df = df[df['MyArche'].isin([name])]
             first = df[df['FirstSecond'].isin(['선공'])]
             firstwin = first[first['WinLose'].isin(['승'])]
             second = df[df['FirstSecond'].isin(['후공'])]
@@ -1244,6 +1247,7 @@ class MyWindow(QMainWindow, form_class):
             plt.pie(ratio, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
             self.canvas14.draw()
             df = myWindow.df2
+            df = df[df['MyArche'].isin([name])]
             first = df[df['FirstSecond'].isin(['선공'])]
             firstwin = first[first['WinLose'].isin(['승'])]
             second = df[df['FirstSecond'].isin(['후공'])]
@@ -1281,6 +1285,7 @@ class MyWindow(QMainWindow, form_class):
             plt.pie(ratio, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
             self.canvas15.draw()
             df = myWindow.df2
+            df = df[df['MyArche'].isin([name])]
             first = df[df['FirstSecond'].isin(['선공'])]
             firstwin = first[first['WinLose'].isin(['승'])]
             second = df[df['FirstSecond'].isin(['후공'])]
@@ -1318,6 +1323,7 @@ class MyWindow(QMainWindow, form_class):
             plt.pie(ratio, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
             self.canvas16.draw()
             df = myWindow.df2
+            df = df[df['MyArche'].isin([name])]
             first = df[df['FirstSecond'].isin(['선공'])]
             firstwin = first[first['WinLose'].isin(['승'])]
             second = df[df['FirstSecond'].isin(['후공'])]
@@ -1355,6 +1361,7 @@ class MyWindow(QMainWindow, form_class):
             plt.pie(ratio, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
             self.canvas17.draw()
             df = myWindow.df2
+            df = df[df['MyArche'].isin([name])]
             first = df[df['FirstSecond'].isin(['선공'])]
             firstwin = first[first['WinLose'].isin(['승'])]
             second = df[df['FirstSecond'].isin(['후공'])]
@@ -1392,6 +1399,7 @@ class MyWindow(QMainWindow, form_class):
             plt.pie(ratio, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
             self.canvas18.draw()
             df = myWindow.df2
+            df = df[df['MyArche'].isin([name])]
             first = df[df['FirstSecond'].isin(['선공'])]
             firstwin = first[first['WinLose'].isin(['승'])]
             second = df[df['FirstSecond'].isin(['후공'])]
@@ -1504,6 +1512,7 @@ class MyWindow(QMainWindow, form_class):
         self.rneme()
         self.tableDeckR2.resizeColumnsToContents()
 
+    # 선후공 승률 막대 그래프 in 덱별 전적
     def fsgraph(self):
         df = myWindow.df6
         df1 = df[df['FirstSecond'].isin(['선공'])]
@@ -1521,7 +1530,7 @@ class MyWindow(QMainWindow, form_class):
         self.figure.clear()
         ax = plt.subplot(2, 1, 1)
         rects1 = plt.barh(2, fwin, align='center', color='lightskyblue', height=0.5, label='선공')
-        rects2 = plt.barh(1, swin, align='center', color='red', height=0.5, label='후공')
+        rects2 = plt.barh(1, swin, align='center', color='xkcd:pistachio', height=0.5, label='후공')
         plt.xlim([0, 100])
         plt.yticks([])
         if fwin >= 30:
